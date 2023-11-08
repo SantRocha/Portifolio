@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0%;
+        }
+
+        #animation {
+            height: 100vh;
+            width: 45%;
+            overflow: hidden; /* Adicione overflow: hidden; para ocultar o conteúdo que sai da div */
+        }
+
+        /* Estilo das imagens */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Define a altura da tela inteira */
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: clip-path 0.3s;
+        }
+
+        /* Estilo da imagem do designer */
+        .designer {
+            z-index: 1;
+            clip-path: inset(0 0 50% 0);
+        }
+
+        /* Estilo da imagem do desenvolvedor */
+        .developer {
+            z-index: 2;
+            clip-path: inset(50% 0 0 0);
+        }
+    </style>
+</head>
+<body>
+    <div id="animation">
+        <div class="image-container">
+            <!-- Imagem do designer -->
+            <img src="../imagens/proficionais.jpg" class="image designer">
+
+            <!-- Imagem do desenvolvedor -->
+            <img src="../imagens/pessoais.jpeg" class="image developer">
+        </div>
+    </div>
+
+    <script>
+        // Seleciona a div de animação pelo seu id
+        var animationDiv = document.querySelector("#animation");
+
+        // Seleciona as imagens pelo seletor de classe
+        var designer = document.querySelector(".designer");
+        var developer = document.querySelector(".developer");
+
+        // Adiciona um evento de movimento do mouse na div de animação
+        animationDiv.addEventListener("mousemove", function(event) {
+            // Calcula a porcentagem da posição vertical do mouse em relação à altura da div de animação
+            var percentage = (event.clientY / animationDiv.offsetHeight) * 100;
+
+            // Define o recorte da imagem do designer como a porcentagem calculada
+            developer.style.clipPath = "inset(" + (100 - percentage) + "% 0 0 0)";
+
+            // Define o recorte da imagem do desenvolvedor como a porcentagem calculada
+            designer.style.clipPath = "inset(0 0 " + percentage + "% 0)";
+        });
+
+        // Limpa o recorte das imagens quando o mouse sai da div de animação
+        animationDiv.addEventListener("mouseout", function() {
+            // Define o recorte da imagem do designer como a porcentagem calculada
+            developer.style.clipPath = "inset(50% 0 0 0)";
+
+            // Define o recorte da imagem do desenvolvedor como a porcentagem calculada
+            designer.style.clipPath = "inset(0 0 50% 0)";
+        });
+    </script>
+</body>
+</html>

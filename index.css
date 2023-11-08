@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    min-height: 100vh;
+}
+
+#apresentacao {
+    width: 100%; 
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#foto {
+    height: 100vh;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: clip-path 0.3s;
+}
+
+.designer {
+    z-index: 1;
+    clip-path: inset(0 0 50% 0);
+}
+
+.developer {
+    z-index: 2;
+    clip-path: inset(50% 0 0 0);
+}
+
+p {
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3em;
+}
+
+a > img {
+    border-radius: 14px;
+    margin: 15px 10px 0px 10px;
+}
+
+a > img:hover {
+    -webkit-transform: scale(1.2);
+}
+
+main {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    min-height: 820px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 1%, rgb(247, 230, 184) 99%);
+}
+
+.imagen-pojt {
+    padding: 15px;
+    min-width: 260px;
+    height: 170px;
+    margin: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.377);
+    background-color: rgb(255, 255, 255);
+}
+
+.imagen-pojt:hover {
+    -webkit-transform: scale(1.2);
+}
+
+#profissionais {
+    background-image: url(imagens/proficionais.jpg);
+}
+
+#pessoais {
+    background-image: url(imagens/pessoais.jpeg);
+}
+#curriculo {
+    background-image: url(imagens/curriculo.png);
+}
+
+.representacao {
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 70%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer{
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+    #apresentacao {
+        width: 55%;
+    }
+
+    #foto {
+        width: 45%;
+    }
+
+    main {
+        min-height: 99vh;
+    }
+
+    .imagen-pojt {
+        min-width: 320px;
+        height: 200px;
+        margin: 50px;
+    }
+    
+    .imagen-pojt:hover {
+        margin: 50px;
+    }
+}
