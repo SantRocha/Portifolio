@@ -1,6 +1,11 @@
 * {
     margin: 0;
 }
+.dark-mode {
+    background-color: #000;
+    color: #00FF00;
+    font-family: monospace;
+}
 
 header {
     display: flex;
@@ -18,9 +23,38 @@ header {
     display: flex;
 }
 
+#social-dark {
+    display: none;
+}
+
+.dark-mode #social {
+    display: none;
+}
+
+.dark-mode #social-dark {
+    display: block;
+}
+
 #foto {
     height: 100vh;
     width: 100%;
+}
+
+#foto-dark {
+    height: 100vh;
+    width: 100%;
+}
+
+.ft-dark {
+    display: none;
+}
+
+.dark-mode .ft-dark {
+    display: block;
+}
+
+.dark-mode .ft-claro {
+    display: none;
 }
 
 .image-container {
@@ -47,10 +81,34 @@ header {
     clip-path: inset(50% 0 0 0);
 }
 
+.designer-dark {
+    z-index: 1;
+    clip-path: inset(0 0 50% 0);
+}
+
+.developer-dark {
+    z-index: 2;
+    clip-path: inset(50% 0 0 0);
+}
+
 p {
     padding: 5px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.3em;
+}
+
+.dark-mode p {
+    font-family: monospace;
+    color: #00FF00;
+}
+
+.desc {
+    color: rgb(116, 116, 116);
+    font-size: 1.1em;
+}
+
+.dark-mode .desc {
+    color: #00FF00;
 }
 
 a > img {
@@ -74,6 +132,10 @@ main {
     background: linear-gradient(to bottom, rgb(255, 255, 255) 1%, rgb(247, 230, 184) 99%);
 }
 
+.dark-mode main {
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 1%, rgb(10, 68, 13) 99%);
+}
+
 .imagen-pojt {
     padding: 15px;
     min-width: 260px;
@@ -85,6 +147,11 @@ main {
 
 .imagen-pojt:hover {
     -webkit-transform: scale(1.2);
+}
+
+.dark-mode .imagen-pojt {
+    background-color: #000000; /* Cor de fundo para '.imagen-pojt' no modo escuro */
+    box-shadow: 5px 5px 15px hsla(120, 100%, 50%, 0.277);
 }
 
 #profissionais {
@@ -119,12 +186,21 @@ footer{
     text-align: center;
 }
 
+.dark-mode footer {
+    color: #00FF00 ;
+}
+
 @media screen and (min-width: 800px) {
+
     #apresentacao {
         width: 55%;
     }
 
     #foto {
+        width: 45%;
+    }
+
+    #foto-dark {
         width: 45%;
     }
 
