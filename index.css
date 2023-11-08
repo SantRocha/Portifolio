@@ -6,6 +6,7 @@ header {
     display: flex;
     flex-wrap: wrap; 
     width: 100%;
+    min-width: 324px;
     min-height: 100vh;
 }
 
@@ -111,6 +112,7 @@ a {
 
 footer{
     width: 100%;
+    min-width: 324px;
     height: 25px;
     background-color: black;
     color: white;
